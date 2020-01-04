@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NSW Data</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="static/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="static/vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Custom Font Icons CSS-->
+    <link rel="stylesheet" href="static/css/font.css">
+    <!-- DataTables CSS-->
+    <link rel="stylesheet" href="static/vendor/datatables.net-bs4/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="static/vendor/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css">
+    <!-- Google fonts - Muli-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="static/css/style.default.premium.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="static/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="static/img/transparent-logo.png">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <header class="header">   
+      <nav class="navbar navbar-expand-lg">
+        <div class="search-panel">
+          <div class="search-inner d-flex align-items-center justify-content-center">
+            <div class="close-btn">Close <i class="fa fa-close"></i></div>
+            <form id="searchForm" action="#">
+              <div class="form-group">
+                <input type="search" name="search" placeholder="What are you searching for...">
+                <button type="submit" class="submit">Search</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+          <div class="navbar-header">
+            <!-- Navbar Header--><a href="{{ url_for('index') }}" class="navbar-brand">
+              <div class="brand-text brand-big visible text-uppercase"><strong class="text-primary">NSW</strong><strong>DATA</strong></div>
+              <div class="brand-text brand-sm"><strong class="text-primary">N</strong><strong>D</strong></div></a>
+            <!-- Sidebar Toggle Btn-->
+            <button class="sidebar-toggle"><i class="fa fa-long-arrow-left"></i></button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="d-flex align-items-stretch">
+      <!-- Sidebar Navigation-->
+      <nav id="sidebar">
+        <!-- Sidebar Header-->
+        <div class="sidebar-header d-flex align-items-center"><a href="{{ url_for('index') }}">
+            <div class="avatar"><img src="static/img/transparent-logo.png" alt="..." class="img-fluid rounded-circle"></div></a>
+          <div class="title">
+            <h1 class="h5"><a href="https://www.code.sydney" target="_blank">Code.Sydney</a></h1>
+            <p>Volunteer Programmers</p>
+          </div>
+        </div>
+        <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+        <ul class="list-unstyled">
+          <li><a href="{{ url_for('index') }}"> <i class="icon-home"></i>Home </a></li>
+        </ul>  
+      </nav>
+      <!-- Sidebar Navigation end-->
+      <div class="page-content">
+        <!-- Page Header-->
+        <div class="page-header no-margin-bottom">
+          <!--
+          <div class="container-fluid">
+            <h2 class="h5 no-margin-bottom">Community Contributed NSW Open Data APIs</h2>
+          </div>
+        -->
+        </div>
+        <!-- Breadcrumb-->
+        <div class="container-fluid">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
+            <li class="breadcrumb-item active">Contributions        </li>
+          </ul>
+        </div>
+        <section class="no-padding-top">
+          <div class="container-fluid">
+            <div class="block">
+              <div class="title"><strong>Community Contributed NSW Open Data APIs</strong></div>
+              <div class="block-body">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <p>Volunteer data analysts contribute NSW Open Data APIs related to location intelligence.</p>
+                  </div>
+                  <div class="col-lg-6">
+                    <p>To learn more about NSW Open Data, please visit <a href="https://data.nsw.gov.au/" target="_blank">https://data.nsw.gov.au/</a>.</p>
+                  </div>
+                </div>
+                <div class="table-responsive">
+                  <table id="datatable1" style="width: 100%;" class="table">
+                    <thead>
+                      <tr>
+                        <th>API</th>
+                        <th>Developer</th>
+                        <th>Data Profile and Visualisation</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><a href="/api_topbaby/documentation" target="_blank" class="text-muted">NSW Birth Rate by Suburb</a></td>
+                        <td><a href="https://www.linkedin.com/in/engramarbollas/" target="_blank" class="text-muted">Engramar Bollas</a></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                          <td><a href="/api_opaltrain/documentation" target="_blank" class="text-muted">NSW Train Opal Trips</a></td>
+                          <td><a href="https://www.linkedin.com/in/sam-leung/" target="_blank" class="text-muted">Samson Leung</a></td>
+                          <td></td>
+                      </tr>
+                      <tr>
+                          <td><a href="/api_opaltraincardtype/documentation" target="_blank" class="text-muted">NSW Train Opal Card Type Monthly Figures</a></td>
+                          <td><a href="https://www.linkedin.com/in/sam-leung/" target="_blank" class="text-muted">Samson Leung</a></td>
+                          <td></td>
+                      </tr>
+                      <tr>
+                          <td><a href="/api_contingentworkforce/documentation" target="_blank" class="text-muted">NSW Total Hours Worked per Contingent Workforce</a></td>
+                          <td><a href="https://www.linkedin.com/in/yaoye-lu-628abb173/" target="_blank" class="text-muted">Yaoye Lu</a></td>
+                          <td></td>
+                      </tr>
+                      <tr>
+                          <td><a href="/api_acnc/documentation" target="_blank" class="text-muted">Australian Charities and Not-for-profits Commission Data</a></td>
+                          <td><a href="https://www.linkedin.com/in/geoffreypidcock/" target="_blank" class="text-muted">Geoffrey Pidcock</a></td>
+                          <td><a href="{{ url_for('acnc_data_profile') }}" target="_blank" class="text-muted">ACNC Data Profile</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer class="footer">
+          <div class="footer__block block no-margin-bottom">
+            <div class="container-fluid text-center">
+              <p class="no-margin-bottom">2020 &copy; <a href="https://www.code.sydney" target="_blank">Code.Sydney Pty Ltd</a></p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- JavaScript files-->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="static/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="static/vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="static/vendor/chart.js/Chart.min.js"></script>
+    <script src="static/vendor/jquery-validation/jquery.validate.min.js"></script>
+    <!-- Data Tables-->
+    <script src="static/vendor/datatables.net/js/jquery.dataTables.js"></script>
+    <script src="static/vendor/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
+    <script src="static/vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="static/vendor/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+    <script src="static/js/tables-datatable.js"></script>
+    <script src="static/js/front.js"></script>
+  </body>
+</html>
