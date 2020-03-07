@@ -935,6 +935,7 @@ class GovernmentSchools(Resource):
         db = get_db_schools()
         details_cur = db.execute(
             'select * from [master_dataset] where Town_suburb = ? COLLATE NOCASE', [SUBURB])
+            # Commented by Engramar on 7 March 2020
             # 'select * from [master_dataset] where Town_suburb = ? COLLATE NOCASE COLLATE RTRIM', [SUBURB])
         details = details_cur.fetchall()
 
